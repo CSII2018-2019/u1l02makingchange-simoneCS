@@ -32,23 +32,34 @@ public class U1L02MakingChanges {
 		
 		
 		//MATHEMATICAL METHOD 
+		//quarters nickels dimes and pennies 
 		int nickels = 0; //initializing nickels 
 		int pennies = 0; 
+		int quarters = 0;
+		int dimes = 0;
 		//get input form user 
 		String answer = JOptionPane.showInputDialog(" Enter a monetary value (ex: 1.56): ");
 		//System.out.println(answer); // just to check if did right 
 		double cash = Double.parseDouble(answer);
 		
-		//divide by 5 and round down 
-		nickels = (int)(cash/0.05); //need to use an int so it's chopping off decimals
-		System.out.println(nickels);
+		//divide by .25 and round down
+		quarters = (int)(cash/quarters);
+		
+		//subtract # quarters from cash and then divide by.1
+		dimes = (int)(cash-quarters *.1);
+		
+		//divide by .05 and round down 
+			nickels = (int)((cash - (quarters + dimes))*.05); //need to use an int so it's chopping off decimals
+		//System.out.println(nickels);
 		
 		//subtract # nickels * 5 from total to get pennies 
-		pennies = (int)(cash - .05 * nickels); 
+		pennies = (int)((cash - nickels) * .05); 
+		
 		//print 
 		JOptionPane.showMessageDialog(null, " $ " + cash + " is " + 
-				nickels + " nickels and " 
+				quarters + " quarters, " +
+				dimes + " dimes " +
+				nickels + " nickels, and " 
 				+ pennies + " pennies ");
 	}
-
 }
