@@ -43,22 +43,21 @@ public class U1L02MakingChanges {
 		double cash = Double.parseDouble(answer);
 		
 		//divide by .25 and round down
-		quarters = (int)(cash/quarters);
+		quarters = (int)(cash/.25);
 		
 		//subtract # quarters from cash and then divide by.1
-		dimes = (int)(cash-quarters *.1);
+		//dimes = (int)(cash-quarters *.1);
 		
 		//divide by .05 and round down 
-			nickels = (int)((cash - (quarters + dimes))*.05); //need to use an int so it's chopping off decimals
+			nickels = (int)(cash - quarters *.25); //need to use an int so it's chopping off decimals
 		//System.out.println(nickels);
 		
 		//subtract # nickels * 5 from total to get pennies 
-		pennies = (int)((cash - nickels) * .05); 
+		pennies = (int)(cash - nickels * .05); 
 		
 		//print 
 		JOptionPane.showMessageDialog(null, " $ " + cash + " is " + 
 				quarters + " quarters, " +
-				dimes + " dimes " +
 				nickels + " nickels, and " 
 				+ pennies + " pennies ");
 	}
