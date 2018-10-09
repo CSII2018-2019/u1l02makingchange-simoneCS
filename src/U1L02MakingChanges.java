@@ -42,8 +42,7 @@ public class U1L02MakingChanges {
 		int answer1 = 0;
 		//get input form user 
 		String answer = JOptionPane.showInputDialog(" Enter amount of dollars (ex: 1.00): ");
-		String answer2 = JOptionPane.showInputDialog(" Enter amount of cents (ex: 0.56) " );
-		//System.out.println(answer); // just to check if did right 
+		String answer2 = JOptionPane.showInputDialog(" Enter amount of cents (ex: 0.56) " ); 
 		double dollar = Double.parseDouble(answer);
 		double cent = Double.parseDouble(answer2);
 		
@@ -73,35 +72,22 @@ public class U1L02MakingChanges {
 		//MODULAR METHOD 
 		average = (int)(dollar + cent/2);
 		
-		//if (dollar%.25 == 0); {
 			quarters1 = (int)(dollar/.25); 
-		//}
 		
 		answer1 = (int)(cent%.25);
-		//if (answer1 == 0); {
 			quarters2 = (int)(cent/.25);
-			nickels = 0;
-			dimes = 0;
-			pennies = 0;//}
 		
 		answer1 = (int)(answer1%.1);
-		//if (answer1 ==0); {
-			nickels = 0;
 			dimes = (int)(answer1/.1);
-			pennies = 0;//}
 		
 		answer1 = (int)(answer1%.05);
-		//if (answer1 ==0 ); {
 			nickels = (int)(answer1/.05);
-			pennies = 0;//}
 		
 		answer1 = (int)(answer1%.01);
-		//if (answer1 ==0); {
 			pennies = (int)(answer1/.01);
-		//}
-		
+
 		JOptionPane.showMessageDialog(null, " quarters = " + (quarters1 + quarters2)
 				+ " dimes = " + dimes + "nickles = " + nickels + " pennies = " + pennies
 				+ " The average is " + average);
-	}
+	} 
 }
